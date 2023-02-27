@@ -1,24 +1,34 @@
+import addMenu from "./menu.js";
+import clearDiv from "./clear.js";
+import addSocial from "./social.js";
+import home from "./home.js";
+
 const content = document.getElementById("content");
 
-function addName() {
-  const element = document.createElement("h1");
-  element.textContent = "Chan's Chicken";
-  return element;
-}
+const homebtn = document.createElement("button");
+homebtn.innerText = "Home";
+homebtn.addEventListener("click", () => {
+  clearDiv();
+  home();
+});
+content.appendChild(homebtn);
 
-function history() {
-  const element = document.createElement("div");
-  element.innerText =
-    "Established in 2005, Chan's Chicken is widely known as the greatest chicken in the entire world.";
-  return element;
-}
+const menubtn = document.createElement("button");
+menubtn.innerText = "Menu";
+menubtn.addEventListener("click", () => {
+  clearDiv();
+  addMenu();
+});
+content.appendChild(menubtn);
 
-function addHours() {
-  const element = document.createElement("div");
-  element.textContent = "HOURS: Mon-Sat 10:00AM - 8:00PM";
-  return element;
-}
-
-content.appendChild(addName());
-content.appendChild(history());
-content.appendChild(addHours());
+const socialbtn = document.createElement("button");
+socialbtn.innerText = "Socials";
+socialbtn.addEventListener("click", () => {
+  clearDiv();
+  addSocial();
+});
+content.appendChild(socialbtn);
+const textDiv = document.createElement("div");
+textDiv.id = "textDiv";
+content.appendChild(textDiv);
+home();
