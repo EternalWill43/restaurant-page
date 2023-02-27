@@ -1,6 +1,9 @@
 export default function addSocial() {
-  let textDiv = document.getElementById("textDiv");
-  let li = document.createElement("ul");
+  const textDiv = document.getElementById("textDiv");
+  const title = document.createElement("h1");
+  title.id = "socials";
+  title.textContent = "SOCIALS";
+  const li = document.createElement("ul");
   const ig = document.createElement("a");
   const igText = document.createTextNode("Instagram");
   ig.appendChild(igText);
@@ -19,5 +22,6 @@ export default function addSocial() {
   tt.title = "tiktok";
   tt.href = "https://www.tiktok.com/@chantast1c";
   li.appendChild(tt);
+  textDiv.appendChild(title);
   textDiv.appendChild(li);
 }
